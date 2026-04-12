@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajay ❤️ Garima (अजय संग गरिमा) | Wedding Invitation</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💍</text></svg>'>
+  <meta name="description" content="You're invited to celebrate the wedding of Abhishek and Shikha." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#faf6f0; --ink:#6e5a4d; --muted:#6b6b6b; --brand:#9b5de5; --accent:#f15bb5; --topheading:#5c3b28;
+      --card:#fffaf9; --ring:#b9935a; --gold:#b08d57; --black:#000000;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,Arial,sans-serif}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1100px;margin-inline:auto;padding:20px}
+    .hero{position:relative;isolation:isolate;border-bottom:1px solid var(--ring);}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:40px 20px}
+    .names{color:var(--gold); font-family: "Playfair Display", Georgia, serif;font-size:clamp(28px,5vw,54px);line-height:1.05;margin:0}
+    .sub{color:var(--muted);margin-top:10px}
+    .pill{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--ring);padding:8px 14px;border-radius:999px;background:var(--card)}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;border:1px solid var(--ring);background:var(--ink);color:white;font-weight:600}
+    .btn.alt{background:white;color:var(--ink)}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .section{padding:48px 20px;border-bottom:1px solid var(--ring)}
+    .h2{color:var(--topheading);font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,36px);margin:0 0 12px}
+    .h3{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 8px}
+    .center{text-align:center}
+    .gold{color:var(--gold)}
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+    .gallery img{border-radius:12px}
+    .footer{padding:28px 20px;text-align:center;color:var(--muted)}
+    .badge{position:absolute;inset:auto 20px 20px auto;background:var(--card);border:1px solid var(--ring);padding:10px 14px;border-radius:12px}
+    .rsvp{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    @media (max-width: 880px){
+      .hero-inner{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width: 881px) and (max-width: 1180px){
+      .gallery{grid-template-columns:repeat(4,1fr)}
+    }
+    .ornament{height:1px;background:linear-gradient(90deg,transparent, var(--ring), transparent);margin:18px 0}
+
+    /* scroll to top */
+    #scrollTopBtn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background: #dfc8b8;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background: #6d472d;
+    transform: translateY(-2px);
+}
+  </style>
+  <!-- for wedding ceremony  -->
+ <style>
+.section-divider.premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #7a4f2a;
+}
+
+.section-divider.premium::before,
+.section-divider.premium::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d4b483, transparent);
+    margin: 0 20px;
+}
+
+/* ganesh ji header */
+.ganesh-strip{
+    width:100%;
+    height:130px;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:-30px;
+}
+
+.ganesh-strip img{
+    width:320px;
+    height:160px;
+    object-fit:cover;
+    object-position:center;
+}
+</style>
+
+  <script>
+    // ---- Add-to-Calendar (ICS) ----
+    function makeICS({uid, title, startLocal, endLocal, location, description}){
+      const esc = s => (s||"").replace(/[\n\r]/g, "\n").replace(/,/g, '\\,');
+      const pad = n => (n<10? '0'+n : ''+n);
+      function fmt(dt){
+        const y=dt.getFullYear(), m=pad(dt.getMonth()+1), d=pad(dt.getDate()), hh=pad(dt.getHours()), mm=pad(dt.getMinutes());
+        return `${y}${m}${d}T${hh}${mm}00`;
+      }
+      const dtstamp = new Date();
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//PramodWedsSrinika//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${fmt(new Date(Date.UTC(dtstamp.getFullYear(),dtstamp.getMonth(),dtstamp.getDate(),dtstamp.getHours(),dtstamp.getMinutes())))}Z`,
+        `DTSTART;TZID=Asia/Kolkata:${fmt(startLocal)}`,
+        `DTEND;TZID=Asia/Kolkata:${fmt(endLocal)}`,
+        `SUMMARY:${esc(title)}`,
+        `LOCATION:${esc(location)}`,
+        `DESCRIPTION:${esc(description)}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      return new Blob([ics], {type:'text/calendar;charset=utf-8'});
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const wedStart = new Date(2026,5,7,10,30); // 26 Oct 2025 10:30 IST
+      const wedEnd   = new Date(2026,5,7,12,30);
+      const recStart = new Date(2026,5,5,8,0);  // 29 Oct 2025 12:00 IST
+      const recEnd   = new Date(2026,5,19,10,0);
+      const wedBlob = makeICS({
+        uid:'wedding-20260507@family',
+        title:'Wedding Ceremony – Ajay & Garima',
+        startLocal: wedStart,
+        endLocal: wedEnd,
+        location: 'Mureda Ratan Patti',
+        description: 'Vivaha at 10:30 PM. #AjayWedsGarima'
+      });
+      const recBlob = makeICS({
+        uid:'reception-20260505@family',
+        title:'Reception – Ajay & Garima',
+        startLocal: recStart,
+        endLocal: recEnd,
+        location: 'Jangal Kita Sem, Deoria, UP',
+        description: 'Greetings from 8:00 PM onwards. #AjayWedsGarima'
+      });
+      const a1 = document.getElementById('ics-wedding');
+      const a2 = document.getElementById('ics-reception');
+      if(a1){ a1.href = URL.createObjectURL(wedBlob); a1.download = 'Wedding-26Oct.ics'; }
+      if(a2){ a2.href = URL.createObjectURL(recBlob); a2.download = 'Reception-29Oct.ics'; }
+    });
+
+    // ---- Countdowns ----
+    (function(){
+      function startCountdown(targetDate, ids){
+        function tick(){
+          var now = new Date();
+          var diff = targetDate - now;
+          var d=0,h=0,m=0,s=0;
+          if(diff > 0){
+            s = Math.floor(diff/1000);
+            d = Math.floor(s/86400); s -= d*86400;
+            h = Math.floor(s/3600); s -= h*3600;
+            m = Math.floor(s/60); s -= m*60;
+          } else {
+            document.getElementById(ids.d).innerText = '0';
+            document.getElementById(ids.h).innerText = '0';
+            document.getElementById(ids.m).innerText = '0';
+            document.getElementById(ids.s).innerText = '0';
+            return;
+          }
+          document.getElementById(ids.d).innerText = d;
+          document.getElementById(ids.h).innerText = h;
+          document.getElementById(ids.m).innerText = m;
+          document.getElementById(ids.s).innerText = s;
+        }
+        tick();
+        return setInterval(tick, 1000);
+      }
+      var wedding = new Date(2026, 4, 7, 10, 30, 0);   // Oct=9
+      var reception = new Date(2026, 4, 5, 12, 0, 0);
+      window.addEventListener('load', function(){
+        startCountdown(wedding,  {d:'c1-d', h:'c1-h', m:'c1-m', s:'c1-s'});
+        startCountdown(reception,{d:'c2-d', h:'c2-h', m:'c2-m', s:'c2-s'});
+      });
+    })();
+  </script>
+</head>
+<body>
+<div class="ganesh-strip">
+  <img src="ganesh-header.png" alt="श्री गणेशाय नमः">
+</div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="pill" aria-label="Invitation">
+          <span>Wedding Invitation</span>
+          <span>•</span>
+          <time datetime="2026-07-05">07 May 2026</time>
+          <span>•</span>
+          <span>Kushinagar</span>
+        </span>
+        <h1 class="names">Ajay Patel <span class="gold">&amp;</span> Garima Singh</h1>
+        <p class="sub">With the blessings of our families,we warmly invite you to celebrate the beginning of our forever journey.
+Your presence and blessings will make our day truly special.</p>
+        <div class="rsvp">
+          <a class="btn" href="#venues">📍 Venue &amp; Maps</a>
+          <a class="btn alt" href="#contact">प्रेषक</a>
+        </div>
+      </div>
+      <div class="card" aria-label="Couple Photo">
+        <!-- Replace with your actual photo after upload -->
+         <img 
+            src="ajay.png" 
+            alt="Ajay"
+            style="width:100%; max-width:420px; border-radius:10px;"
+            />
+      </div>
+    </div>
+    <div class="badge">#AjayWedsGarima</div>
+  </header>
+
+  <!-- SAVE THE DATE + COUNTDOWNS -->
+  <section class="section" id="save-the-date">
+    <div class="container">
+      <h2 class="h2 center">Save the Date</h2>
+      <div class="card" style="overflow:hidden; text-align:center; padding:20px;">
+        <!-- Replace with your banner: ./photos/save-the-date.jpg -->
+        <img src="wedding.jpg" 
+        alt="Save the Date – Ajay & Garima"
+        style="mix-blend-mode:multiply; max-width:420px; width:100%; display:inline-block;"/>
+      </div>
+
+      <!-- wedding countdown -->
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card center">
+          <h3 class="h3">Wedding Countdown</h3>
+          <p style="margin:8px 0 14px">Thursday, 07 May · 10:30 PM</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-weight:600">
+            <div><div id="c1-d" style="font-size:28px">--</div><div class="sub">Days</div></div>
+            <div><div id="c1-h" style="font-size:28px">--</div><div class="sub">Hours</div></div>
+            <div><div id="c1-m" style="font-size:28px">--</div><div class="sub">Mins</div></div>
+            <div><div id="c1-s" style="font-size:28px">--</div><div class="sub">Secs</div></div>
+          </div>
+        </div>
+        <div class="card center">
+          <h3 class="h3">Tilak Countdown</h3>
+          <p style="margin:8px 0 14px">Monday, 05 May · 8:00 PM</p>
+          <div style="display:flex;justify-content:center;gap:14px;font-weight:600">
+            <div><div id="c2-d" style="font-size:28px">--</div><div class="sub">Days</div></div>
+            <div><div id="c2-h" style="font-size:28px">--</div><div class="sub">Hours</div></div>
+            <div><div id="c2-m" style="font-size:28px">--</div><div class="sub">Mins</div></div>
+            <div><div id="c2-s" style="font-size:28px">--</div><div class="sub">Secs</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITATION TEXT -->
+  <section class="section" id="invite">
+    <div class="container">
+      <h2 class="h2 center">सादर आमंत्रण | You’re Warmly Invited</h2>
+      <p class="center" style="max-width:820px;margin:0 auto">
+        दो दिल, एक वादा, और जीवनभर का साथ।
+        <br/>
+        Please join us as <strong>Ajay</strong> and <strong>Garima</strong> celebrate the beginning of their forever journey.
+        <br/>
+        <em>“जीवन की डोर में प्रेम सबसे सुनहरा धागा है।”</em>
+      </p>
+      
+      <!-- for main events schedule -->
+<div class="section-divider premium">
+  <span>🌸मांगलिक कार्यक्रम | Wedding Ceremonies🌸</span>
+</div>
+
+
+      <div class="ornament"></div>
+      <div class="grid-3">
+        <div class="card center">
+          <h3 class="h3">💛 शुभ तिलक | Shubh Tilak</h3>
+          <p>
+            <strong>Monday, 04 May</strong><br/>
+            <strong>8:30 PM onwards</strong>
+          </p>
+          <p>Jangal Kita Sem, Deoria, UP</p>
+        </div>
+        <div class="card center">
+          <h3 class="h3">🌼 शुभ हल्दी | Shubh Haldi</h3>
+          <p>
+            <strong>Tuesday, 06 May</strong><br/>
+            <strong>10:30 AM onwards</strong>
+          </p>
+          <p>Jangal Kita Sem, Deoria, UP</p>
+        </div>
+        <div class="card center">
+          <h3 class="h3">💍 शुभ विवाह | Shubh Vivah</h3>
+          <p>
+            <strong>Thursday, 07 May</strong><br/>
+            <strong>10:30 PM onwards</strong>
+          </p>
+          <p>Shivaji Nagar Ward No 19 (MunderaRatan Patti), Kushinagar, UP</p>
+        </div>
+        <div class="card center">
+          <h3 class="h3">🤝 मिलन एवं विदाई | Milan & Vidaai</h3>
+          <p>
+            <strong>Friday, 08 May</strong><br/>
+            <strong>08:00 AM onwards</strong>
+          </p>
+          <p>Shivaji Nagar Ward No 19 (MunderaRatan Patti), Kushinagar, UP</p>
+        </div>
+        <div class="card center">
+          <h3 class="h3">📌 विशेष सूचना | Important Note</h3>
+          <p>बारात हमारे निवास स्थान से ग्राम- शिवाजी नगर, वार्ड नं. 19
+(मुंडेरा रतन पट्टी) पोस्ट- कुशीनगर, जिला- कुशीनगर के लिए
+गुरुवार 7 मई को प्रस्थान करेगी।</p>
+          <p class="muted">Come as you are, glow as you feel ✨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUES + MAPS + SCHEDULE + ICS + QR -->
+  <section class="section" id="venues">
+    <div class="container">
+
+        
+      <h2 class="h2 center">Venues &amp; Maps</h2>
+      <div class="grid-2" style="margin-top:18px">
+        <div class="card">
+          <h3 class="h3">Wedding Location – Shivaji Nagar Ward No 19 (MunderaRatan Patti), Kushinagar, UP</h3>
+          <p><p>📍 शादी स्थल तक पहुँचने के लिए ऊपर मैप या QR स्कैन करें</p></p>
+          <div style="aspect-ratio:16/9;border:1px solid var(--ring);border-radius:12px;overflow:hidden">
+            <iframe title="Wedding Hall Map" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=26.7269499,83.8817571&z=15&output=embed">
+            </iframe>
+          </div>
+          <p style="margin-top:10px"><a target="_blank" href="https://www.google.com/maps/place/Mundera+Ratan+Patti,+Uttar+Pradesh+274403/@26.7261888,83.8726453,15z/data=!4m6!3m5!1s0x3993eba5b849c811:0x8bbc3f274415ae2b!8m2!3d26.7269499!4d83.8817571!16s%2Fg%2F12hrxczqs!18m1!1e1?entry=ttu">Open in Google Maps</a></p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Haldi Function – Jangal Kita Sem (Ullahawa), Deoria, UP</h3>
+          <p>📍 रिसेप्शन स्थल तक पहुँचने के लिए नीचे दिए गए मैप पर क्लिक करें</p>
+          <div style="aspect-ratio:16/9;border:1px solid var(--ring);border-radius:12px;overflow:hidden">
+            <iframe title="Reception Venue Map" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=26.5477337,83.6441532&z=15&output=embed">
+            </iframe>
+          </div>
+          <p style="margin-top:10px"><a target="_blank" href="https://www.google.com/maps/place/Jungle+Kitasen,+Uttar+Pradesh+274202/@26.54428,83.64157,15z/data=!3m1!4b1!4m6!3m5!1s0x3993d9246ca2f5d1:0xcbbf8115cefbc040!8m2!3d26.5477337!4d83.6441532!16s%2Fg%2F12hnwzz2j!18m1!1e1?entry=ttu">Open in Google Maps</a></p>
+        </div>
+      </div>
+
+      <!-- Added: Schedule + ICS + QR -->
+      <div class="grid-2" style="margin-top:24px">
+        <div class="card">
+          <h3 class="h3">Schedule in Calendar</h3>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="padding:10px 0"><strong>Monday, 04 May · 8:00 PM</strong> — 💛 Subh Tilak at Jangal Kita Sem, Deoria, UP</li>
+            <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>Thursday, 07 May · 10:30 PM</strong> — Wedding at Shivaji Nagar Ward No 19 (MunderaRatan Patti), Khusinagar, UP</li>
+            <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>🤝 Milan va Vidaai </strong> — Family Meet & Blessings</li>
+            
+          </ul>
+          <div class="rsvp" style="margin-top:14px">
+            <a id="ics-wedding" class="btn" href="#">Add Wedding (.ics)</a>
+            <a id="ics-reception" class="btn alt" href="#">Add Haldi (.ics)</a>
+          </div>
+        </div>
+
+    <div class="card">
+            <h3 class="h3">📍 Scan to Open Maps</h3>
+            <p class="sub">Point your camera to open the venue in Google Maps.</p>
+
+    <div class="grid-2" style="margin-top:18px">
+    
+        <div class="center">
+            <p><strong>💍 Wedding</strong></p>
+        <img
+            alt="QR to Wedding Map"
+            style="margin:0 auto;max-width:180px;border-radius:12px"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FMundera%2BRatan%2BPatti%2C%2BUttar%2BPradesh%2B274403%2F%4026.7261888%2C83.8726453%2C15z"
+            />
+            <p style="margin-top:10px">Mundera Ratan Patti</p>
+        </div>
+
+        <div class="center">
+            <p><strong>🎉 Haldi</strong></p>
+            <img
+            alt="QR to Haldi Map"
+            style="margin:0 auto;max-width:180px;border-radius:12px"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FJungle%2BKitasen%2C%2BUttar%2BPradesh%2B274202%2F%4026.54428%2C83.64157%2C15z"
+            />
+            <p style="margin-top:10px">Jungle Kitasen</p>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+      <!-- Groom Card -->
+      <div class="grid-3" style="margin-top:24px">
+        <div class="card">
+          <h3 class="h3">🤵 वर परिचय</h3>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>चि. अजय पटेल</strong><i class="fad fa-male"></i></li>
+            <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>सुपुत्र – श्रीमती ललिता देवी व श्री हरिनाथ पटेल<br>
+                    ग्राम – जंगल किता सेम (उदवली)<br>
+                    पोस्ट – बरड़ा, जिला – देवरिया (उ.प्र.)</strong>
+            </li>
+          </ul>
+        </div>
+        <!-- Center Connector -->
+        <div class="card center-card" style="text-align:center; padding:30px 15px;">
+            <div style="font-size:36px;">🤝</div>
+            <h3 style="margin-top:10px;">संग</h3>
+            <p style="font-size:14px; opacity:.8;">Together Forever</p>
+        </div>
+
+        <!-- Bride Card -->
+        <div class="card">
+            <h3 class="h3">👰 वधू परिचय</h3>
+                <ul style="list-style:none;padding:0;margin:0">
+                    <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>आयु. गरिमा सिंह</strong></li>
+                    <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>सुपुत्री – श्रीमती लक्ष्मी देवी व श्री गोरेश सिंह<br>
+                            ग्राम – शिवाजी नगर, वार्ड नं. 19 (मुंडेरा रतन पट्टी)<br>
+                            पोस्ट – कुशीनगर, जिला – कुशीनगर (उ.प्र.)</strong>
+                    </li>
+                </ul>
+        </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="h2 center">Gallery</h2>
+      <p class="center" style="max-width:760px;margin:0 auto 16px">Add your favourite pre‑wedding portraits or family photos. Replace the image links below with your own files after upload.</p>
+      <div class="gallery">
+        <!-- Replace these src URLs with your own image files (e.g., ./photos/1.jpg) -->
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Couple 1"/>
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Couple 2"/>
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Couple 3"/>
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Couple 4"/>
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Couple 5"/>
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Couple 6"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / WHATSAPP CTA (optional) -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="card center">
+        <h1 class="h1">📞 संपर्क सूत्र | Family Contact</h1>
+        <p>
+            <strong>प्रेषक: श्री हरिनाथ पटेल</strong><br>
+            ग्राम – जंगल किता सेम (उलाहवा)<br>
+            पोस्ट – लेड़ाहा, जिला – देवरिया (उ.प्र.)
+        </p>
+        <p style="margin-top:12px;">
+        📱 <a href="tel:+919125614545">+91 9125614545</a> |
+        <a href="tel:+917380714595">7380714595</a>
+      </p>
+        <p><a href="https://wa.me/919125614545?text=Hello%20Ajay%20ji." target="_blank" rel="noopener">💬 Confirm on WhatsApp</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>पटेल परिवार की ओर से सप्रेम आमंत्रण · समारोह में अवश्य पधारें!</p>
+    <span style="font-size:14px; opacity:.8;">
+    Made with ❤️ by the Patel family · See you at the celebrations!
+  </span>
+  <button id="scrollTopBtn" title="Go to top">🔝</button>
+  </footer>
+  <!-- scroll reveal -->
+    <script>
+document.getElementById("scrollTopBtn").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+</body>
+</html>
