@@ -111,6 +111,44 @@
     object-fit:cover;
     object-position:center;
 }
+
+/* petals */
+.petals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* card backgroun */
+.card{
+    background-image:linear-gradient(rgba(255,255,255,.70),rgba(255,255,255,.70)), url('https://raw.githubusercontent.com/aabhishek-patel/ajaywedsgarima/main/ajaygarimaflowers.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+}
 </style>
 
   <script>
@@ -205,6 +243,7 @@
     })();
   </script>
 
+
   <!-- when page is refeshed it navigate to home -->
   <script>
   window.onload = function () {
@@ -214,7 +253,45 @@
     });
   };
 </script>
+
+
 </head>
+<div class="petals"></div>
+<!-- Petals -->
+   <script>
+const petals = document.querySelector('.petals');
+
+for (let i = 0; i < 15; i++) {
+  let flower = document.createElement('div');
+  flower.classList.add('flower');
+  flower.innerHTML = '🌸';
+  flower.style.left = Math.random() * 100 + 'vw';
+  flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+  flower.style.fontSize = (18 + Math.random() * 10) + 'px';
+  flower.style.animationDelay = Math.random() * 5 + 's';
+  petals.appendChild(flower);
+}
+
+// <!-- for diffrenst flowers and more random -->
+// window.onload = function () {
+//     const petals = document.querySelector('.petals');
+//     const flowers = ['🌸', '🌺', '💮', '🌷', '🌹', '🌻'];
+
+//     for (let i = 0; i < 20; i++) {
+//         let flower = document.createElement('div');
+//         flower.classList.add('flower');
+
+//         flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+
+//         flower.style.left = Math.random() * 100 + 'vw';
+//         flower.style.animationDuration = (5 + Math.random() * 6) + 's';
+//         flower.style.fontSize = (18 + Math.random() * 12) + 'px';
+//         flower.style.animationDelay = Math.random() * 5 + 's';
+
+//         petals.appendChild(flower);
+//     }
+// };
+</script>
 <body>
 <div class="ganesh-strip">
   <img src="https://raw.githubusercontent.com/aabhishek-patel/ajaywedsgarima/main/ganesh-header.png" alt="श्री गणेशाय नमः">
@@ -440,9 +517,16 @@
           </ul>
         </div>
         <!-- Center Connector -->
-        <div class="card center-card" style="text-align:center; padding:30px 15px;">
-            <div style="font-size:36px;">🤝</div>
-            <h3 style="margin-top:10px;">संग</h3>
+        <div class="card center-card" style="text-align:center; padding:0; overflow:hidden;">
+            <img 
+        src="https://raw.githubusercontent.com/aabhishek-patel/ajaywedsgarima/main/knot.png"
+        alt="Wedding Knot"
+        style="
+            width:100%;
+            display:block;
+            object-fit:cover;
+            margin:0;">
+            <h3 style="margin-top:-30px;">संग</h3>
             <p style="font-size:14px; opacity:.8;">Together Forever</p>
         </div>
 
@@ -451,7 +535,7 @@
             <h3 class="h3">👰 वधू परिचय</h3>
                 <ul style="list-style:none;padding:0;margin:0">
                     <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>आयु. गरिमा सिंह</strong></li>
-                    <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>सुपुत्री – श्रीमती लक्ष्मी देवी व श्री गोरेश सिंह<br>
+                    <li style="padding:10px 0;border-bottom:1px dashed var(--ring)"><strong>सुपुत्री – श्रीमती बदामी देवी व श्री गनेश सिंह<br>
                             ग्राम – शिवाजी नगर, वार्ड नं. 19 (मुंडेरा रतन पट्टी)<br>
                             पोस्ट – कुशीनगर, जिला – कुशीनगर (उ.प्र.)</strong>
                     </li>
